@@ -1,3 +1,4 @@
+# ignore the generated files
 gen/
 
 # Windows image file caches

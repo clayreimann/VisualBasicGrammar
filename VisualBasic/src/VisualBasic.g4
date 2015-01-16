@@ -1,133 +1,43 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *  The MIT License (MIT)
+ *
+ *  Copyright (c) 2015 Clay Reimann
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be included in
+ *  all copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ *  THE SOFTWARE.
+ *
+ *  Known Limitations:
+ *  1. Labels are not allowed on the following lines
+ *      - Case
+ *      - End Function
+ *      - End Property
+ *      - End Select
+ *      - End Sub
+ *      - End With
+ *      - ElseIf
+ *      - End If
+ *      - Loop
+ *      - Next
  */
 
 grammar VisualBasic;
 
-options {
-
-}
-
-///
-/// Lexer
-///
-
-// Visibility
-PUBLIC              : 'Public';
-PRIVATE             : 'Private';
-FRIEND              : 'Friend';
-
-// Methods
-SUB                 : 'Sub';
-FUNCTION            : 'Function';
-PROPERTY            : 'Property';
-GET                 : 'Get';
-SET                 : 'Set';
-LET                 : 'Let';
-
-// Types
-BOOLEAN             : 'Boolean';
-BYTE                : 'Byte';
-CURRENCY            : 'Currency';
-DATE                : 'Date';
-DECIMAL             : 'Decimal';
-DOUBLE              : 'Double';
-INTEGER             : 'Integer';
-LONG                : 'Long';
-OBJECT              : 'Object';
-SINGLE              : 'Single';
-STRING              : 'String';
-VARIANT             : 'Variant';
-
-// File headers
-OPTION_EXPLICIT     : 'Option Explicit';
-ATTRIBUTE           : 'Attribute';
-VERSION             : 'VERSION';
-CLASS               : 'CLASS';
-BEGIN               : [Bb][Ee][Gg][Ii][Nn]; // Case insensitive
-
-// Flow control
-IF                  : 'If';
-THEN                : 'Then';
-ELSEIF              : 'ElseIf';
-ELSE                : 'Else';
-FOR                 : 'For';
-EACH                : 'Each';
-NEXT                : 'Next';
-TO                  : 'To';
-IN                  : 'In';
-DO                  : 'Do';
-WHILE               : 'While';
-LOOP                : 'Loop';
-END                 : [Ee][Nn][Dd];
-EXIT                : 'Exit';
-SELECT              : 'Select';
-CASE                : 'Case';
-ON_ERROR            : 'On Error';
-GOTO_ZERO           : 'GoTo 0';
-GOTO                : 'GoTo';
-RESUME_NEXT         : 'Resume Next';
-WITH                : 'With';
-CALL                : 'Call';
-
-// Misc keywords
-AS                  : 'As';
-DIM                 : 'Dim';
-ENUM                : 'Enum';
-EVENTS              : 'WithEvents';
-TYPE                : 'Type';
-NEW                 : 'New';
-CONST               : 'Const';
-
-// Operators
-EQ                  : '=';
-NEQ                 : '<>';
-LTE                 : '<=';
-GTE                 : '>=';
-GT                  : '>';
-LT                  : '<';
-IS                  : 'Is';
-OR                  : 'Or';
-AND                 : 'And';
-DIV                 : '/';
-NOT                 : 'Not';
-MUL                 : '*';
-MOD                 : 'Mod';
-AMP                 : '&';
-PLUS                : '+';
-MINUS               : '-';
-
-// Separators
-LPAREN              : '(';
-RPAREN              : ')';
-LBRACE              : '{';
-RBRACE              : '}';
-LBRACK              : '[';
-RBRACK              : ']';
-COMMA               : ',';
-DOT                 : '.';
-COLON               : ':';
-
-// Literal values
-STRING_LITERAL      : '"' (ESC|.)*? '"';
-fragment ESC        : '""';
-
-FLOAT_LITERAL       : [0-9]+ ('.'[0-9]+);
-INTEGER_LITERAL     : [0-9]+ '&'?;
-
-FALSE               : 'False';
-TRUE                : 'True';
-NOTHING             : 'Nothing';
-
-ID                  : [a-zA-Z][A-Za-z0-9_]*;
-
-// whitespace
-NL                  : '\r'?'\n';                // unforunately newlines can be syntactic in VB6 so we can't just throw them out
-CONT                : '_' WS* NL                -> skip; // treat line continuations as whitespace
-WS                  : [ \t\f]+                  -> skip;
-COMMENT             : '\'' ~[\r\n]*             -> channel(HIDDEN);
+import VB6Lexer;
 
 ///
 /// Parser
@@ -136,8 +46,11 @@ COMMENT             : '\'' ~[\r\n]*             -> channel(HIDDEN);
 //
 //  line level
 //
+colonOrNL: COLON? NL | COLON;
+
 /** the identifier rule makes it easier to pick IDs out of the parse tree */
 identifier: ID;
+arrayReference: LPAREN expression RPAREN;
 
 visibility
     :   PUBLIC
@@ -161,7 +74,7 @@ variableType
     ;
 
 literalValue
-    :   identifier
+    :   identifier arrayReference?
     |   MINUS? INTEGER_LITERAL
     |   MINUS? FLOAT_LITERAL
     |   STRING_LITERAL
@@ -171,7 +84,8 @@ booleanValue
     |   FALSE
     ;
 objectValue
-    :   identifier
+    :   expression
+    |   identifier arrayReference?
     |   NEW identifier
     |   NOTHING
     ;
@@ -182,8 +96,8 @@ expression
     |   expression op=(MUL|DIV)    expression
     |   expression op=(PLUS|MINUS) expression
     |   LPAREN expression RPAREN
-    |   (   literalValue
-        //| functionCall
+    |   (   //symbolLookup
+           literalValue
         )
     ;
 
@@ -205,37 +119,46 @@ booleanExpression
 //  block level
 //
 block
-    : ( blockStatement NL+ )* blockStatement NL+
-    ;
-blockStatement
-    : (     assignment
-      |     blockVariable
-      |     conditional
-      |     doLoop
-      |     errorStatement
-      |     exitStatement
-      |     whileLoop
-      )
+    : line+
     ;
 
-assignment
-    : identifier EQ expression
+line
+    :   label? statements? NL
+    ;
+label: ID COLON;
+
+statements
+    :   statement
+    |   statements COLON statement
+    ;
+statement
+    :   assignmentStmt
+    |   localVariableStmt
+    |   conditionalStmt
+    |   doLoop
+    |   errorClause
+    |   exitClause
+    |   forLoop
+    //|   methodInvocation
+    |   selectClause
+    |   whileLoop
+    |   withClause
     ;
 
-blockVariable
-    : DIM identifier (AS variableType)?
+assignmentStmt
+    :   ID
     ;
 
-conditional
+localVariableStmt
+    : ID
+    ;
+
+conditionalStmt
     :   conditionalStatement
     |   conditionalBlock
     ;
 conditionalStatement
-    : IF booleanExpression THEN (   assignment
-                                |   errorStatement
-                                |   exitStatement
-                                //|   functionCall
-                                )
+    : IF booleanExpression THEN COLON? statements (ELSE statements)?
     ;
 conditionalBlock
     :   conditionalBlockIf
@@ -243,19 +166,10 @@ conditionalBlock
         conditionalBlockElse?
         conditionalBlockEnd
     ;
-conditionalBlockIf: IF booleanExpression THEN NL block?;
-conditionalBlockElseIf: ELSEIF booleanExpression THEN NL? block?;
-conditionalBlockElse: (ELSE (COLON|COLON? NL) block?);
+conditionalBlockIf: IF booleanExpression THEN block?;
+conditionalBlockElseIf: ELSEIF booleanExpression THEN colonOrNL block?;
+conditionalBlockElse: (ELSE colonOrNL block?);
 conditionalBlockEnd: END IF;
-
-
-exitStatement
-    : EXIT  (   FOR
-            |   FUNCTION
-            |   LOOP
-            |   SUB
-            )
-    ;
 
 doLoop
     :   DO NL
@@ -263,16 +177,80 @@ doLoop
         LOOP WHILE booleanExpression
     ;
 
-errorStatement
+exitClause
+    : EXIT  (   FOR
+            |   FUNCTION
+            |   LOOP
+            |   SUB
+            )
+    ;
+
+errorClause
     :   ON_ERROR RESUME_NEXT
     |   ON_ERROR GOTO identifier
     |   ON_ERROR GOTO_ZERO
+    ;
+
+forLoop
+    :   FOR identifier EQ expression TO expression colonOrNL
+        block
+        NEXT identifier?
+    |   FOR EACH identifier IN objectValue colonOrNL
+        block
+        NEXT identifier?
+    ;
+
+//methodInvocation
+//    :   explicitMethodCall
+//    |   withMethodCall
+    //|   silentMethodCall
+//    ;
+//explicitMethodCall
+//    :   CALL symbolLookup
+//    ;
+//silentMethodCall
+//    :   identifier parameters?
+//    ;
+//symbolLookup
+//    :   identifier groupedParameters? (DOT symbolLookup)?
+//    ;
+//groupedParameters
+//    :   LPAREN parameters? RPAREN
+//    ;
+//parameters
+//    :   (parameter COMMA)* parameter
+//    ;
+//parameter
+//    :   tag?    (   expression
+//                |   booleanExpression
+//                |   objectValue
+//                )
+//    ;
+//tag: identifier PARAM_TAG;
+
+selectClause
+    :   SELECT CASE identifier colonOrNL (NL+)?
+        case*
+        caseElse?
+        END SELECT
+    ;
+case
+    : CASE literalValue colonOrNL block
+    ;
+caseElse
+    : CASE ELSE colonOrNL block
     ;
 
 whileLoop
     :   DO WHILE booleanExpression NL
         block
         LOOP
+    ;
+
+withClause
+    :   WITH objectValue colonOrNL
+        block
+        END WITH
     ;
 
 //
@@ -292,9 +270,13 @@ functionDefinition
     ;
 
 subDefinition
-    :   visibility SUB identifier NL
+    :   visibility? SUB identifier NL
+        metaAttributes?
         block
         END SUB
+    ;
+metaAttributes
+    : NL
     ;
 
 //
