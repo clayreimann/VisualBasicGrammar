@@ -33,7 +33,6 @@
  *      - End If
  *      - Loop
  *      - Next
- *  2. a = b = c is not parsed correctly
  *
  *  Gotchas
  *
@@ -52,12 +51,20 @@ import VB6Lexer;
 colonOrNL: COLON? NL | COLON;
 identifier: ID; // this makes it easier to grab IDs later
 propertyAccess: DOT identifier;
+assignTarget
+    :   identifier
+    |   propertyAccess
+    |   assignTarget arguments
+    |   assignTarget propertyAccess
+    ;
 
 visibility
     :   PUBLIC
     |   PRIVATE
     |   FRIEND
     ;
+
+type: builtinType | identifier;
 
 builtinType
     :   BOOLEAN
@@ -75,8 +82,7 @@ builtinType
     ;
 
 expression
-    :   atom
-    |   unary=(PLUS|MINUS|NOT) expression
+    :   unary=(PLUS|MINUS|NOT) expression
     |   LPAREN expression RPAREN
     |   expression aOpr=EXP expression
     |   expression aOp=(MUL|DIV|MOD) expression
@@ -87,21 +93,20 @@ expression
     |   expression LIKE expression
     |   expression AMP expression
     |   expression lOpr=(AND|OR) expression
+    |   expression  arguments                   #lookup
+    |   expression (DOT expression)+            #lookup
+    |   atom
     ;
 
-expressionWithArguments
-    :   expression  arguments?
-    |   expression (DOT expressionWithArguments)*
-    ;
 arguments
     :   LPAREN (    namedArguments
                 |   positionalArguments
                 |   positionalArguments COMMA namedArguments
-                )
+                )?
         RPAREN
     ;
-positionalArguments:   expressionWithArguments (COMMA expressionWithArguments)*;
-namedArguments: tag expressionWithArguments (COMMA tag expressionWithArguments)*;
+positionalArguments:   expression (COMMA expression?)*;
+namedArguments: tag expression (COMMA tag expression)*;
 tag: identifier PARAM_TAG;
 
 atom
@@ -117,6 +122,12 @@ literal
     |   DATE_LITERAL
     |   NOTHING
     |   TRUE | FALSE
+    ;
+floatLiteral
+    :   FLOAT_LITERAL
+    ;
+integerLiteral
+    :   INTEGER_LITERAL
     ;
 
 newExpr
@@ -136,15 +147,18 @@ statements
 statement
     :   assignmentStmt
     |   conditionalStmt
+    |   declarationStmt
     |   errorStmt
     |   exitStmt
+    |   invocationStmt
     |   loopStmt
     |   selectStmt
     |   withStmt
     ;
 
 assignmentStmt
-    :   expressionWithArguments EQ expressionWithArguments
+    :   assignTarget EQ expression
+    |   SET assignTarget EQ expression  #objectAssignStmt
     ;
 
 conditionalStmt
@@ -152,7 +166,7 @@ conditionalStmt
     |   ifBlock
     ;
 ifStatement
-    :   IF expressionWithArguments THEN COLON? statements (ELSE statements)?
+    :   IF expression THEN COLON? statements (ELSE statements)?
     ;
 ifBlock
     :   ifClause
@@ -160,10 +174,14 @@ ifBlock
         elseClause?
         endIfClause
     ;
-ifClause: IF expressionWithArguments THEN COLON? block?;
-elseIfClause: ELSEIF expressionWithArguments THEN COLON? block?;
+ifClause: IF expression THEN COLON? block?;
+elseIfClause: ELSEIF expression THEN COLON? block?;
 elseClause: ELSE COLON? block?;
 endIfClause: END IF;
+
+declarationStmt
+    :   DIM identifier (AS type)
+    ;
 
 errorStmt
     : ON_ERROR  (   GOTO identifier
@@ -179,29 +197,33 @@ exitStmt
             )
     ;
 
+invocationStmt
+    :   CALL expression
+    ;
+
 loopStmt
     :   forLoop
     |   doWhileLoop
     |   whileLoop
     ;
 doWhileLoop
-    :   DO ((WHILE | UNTIL) expressionWithArguments)? colonOrNL
+    :   DO ((WHILE | UNTIL) expression)? colonOrNL
         block
-        LOOP ((WHILE | UNTIL) expressionWithArguments)?
+        LOOP ((WHILE | UNTIL) expression)?
     ;
 forLoop
-    :   FOR expressionWithArguments EQ expressionWithArguments TO expressionWithArguments colonOrNL
+    :   FOR expression EQ expression TO expression colonOrNL
         block
-        NEXT expressionWithArguments?
+        NEXT expression?
     ;
 whileLoop
-    :   WHILE expressionWithArguments colonOrNL
+    :   WHILE expression colonOrNL
         block
         WEND
     ;
 
 selectStmt
-    :   SELECT CASE expressionWithArguments COLON? (NL+)?
+    :   SELECT CASE expression COLON? (NL+)?
         caseStmt*
         caseElseStmt?
         END SELECT
@@ -219,7 +241,7 @@ caseClause
 caseElseStmt: CASE ELSE colonOrNL block;
 
 withStmt
-    :   WITH expressionWithArguments colonOrNL
+    :   WITH expression colonOrNL
         block
         END WITH
     ;

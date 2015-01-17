@@ -29,6 +29,39 @@ lexer grammar VB6Lexer;
 /// Lexer
 ///
 
+//
+//  Literals
+STRING_LITERAL      : '"' (ESC|.)*? '"';
+fragment ESC        : '""';
+
+fragment DIGIT      : [0-9];
+fragment EXPONENT   : [eE] (PLUS | MINUS)? DIGIT+;
+FLOAT_LITERAL       : DIGIT+ DOT DIGIT+ EXPONENT?
+                    | DOT DIGIT+ EXPONENT?
+                    | DIGIT+ EXPONENT
+                    ;
+INTEGER_LITERAL     : DIGIT+ AMP?;
+
+fragment DATE_F     : DIGIT+ '/' DIGIT+ '/' DIGIT;
+fragment TIME_F     : DIGIT+ ':' DIGIT+ (':' DIGIT+)? ('AM'|'PM')?;
+DATE_LITERAL        : '#' (WS+)?    (   DATE_F
+                                    |   TIME_F
+                                    |   DATE_F WS+ TIME_F
+                                    )
+                      (WS+)? '#';
+
+FALSE               : 'False';
+TRUE                : 'True';
+NOTHING             : 'Nothing';
+
+
+// File headers
+OPTION_EXPLICIT     : 'Option Explicit';
+ATTRIBUTE           : 'Attribute';
+VERSION             : 'VERSION';
+CLASS               : 'CLASS';
+BEGIN               : [Bb][Ee][Gg][Ii][Nn]; // Case insensitive
+
 // Visibility
 PUBLIC              : 'Public';
 PRIVATE             : 'Private';
@@ -56,13 +89,6 @@ SINGLE              : 'Single';
 STRING              : 'String';
 VARIANT             : 'Variant';
 
-// File headers
-OPTION_EXPLICIT     : 'Option Explicit';
-ATTRIBUTE           : 'Attribute';
-VERSION             : 'VERSION';
-CLASS               : 'CLASS';
-BEGIN               : [Bb][Ee][Gg][Ii][Nn]; // Case insensitive
-
 // Flow control
 CALL                : 'Call';
 CASE                : 'Case';
@@ -77,7 +103,6 @@ GOTO                : 'GoTo';
 GOTO_ZERO           : 'GoTo 0';
 IF                  : 'If';
 IN                  : 'In';
-IS                  : 'Is';
 LOOP                : 'Loop';
 NEXT                : 'Next';
 ON_ERROR            : 'On Error';
@@ -131,26 +156,6 @@ RBRACK              : ']';
 COMMA               : ',';
 DOT                 : '.';
 COLON               : ':';
-
-// Literal values
-STRING_LITERAL      : '"' (ESC|.)*? '"';
-fragment ESC        : '""';
-
-fragment DIGIT      : [0-9];
-fragment EXPONENT   : [eE] (PLUS | MINUS)? DIGIT;
-FLOAT_LITERAL       : DIGIT+ DOT DIGIT+ EXPONENT?
-                    | DOT DIGIT+ EXPONENT?
-                    | DIGIT EXPONENT
-                    ;
-INTEGER_LITERAL     : DIGIT+;
-
-fragment DATE_F     : DIGIT+ '/' DIGIT+ '/' DIGIT;
-fragment TIME_F     : DIGIT+ ':' DIGIT+ (':' DIGIT+)? ('AM'|'PM')?;
-DATE_LITERAL        : '#' (WS+)? (DATE_F | TIME_F | DATE_F WS+ TIME_F) (WS+)? '#';
-
-FALSE               : 'False';
-TRUE                : 'True';
-NOTHING             : 'Nothing';
 
 ID                  : [a-zA-Z][A-Za-z0-9_]*;
 
