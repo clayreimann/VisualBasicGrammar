@@ -7,5 +7,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="antlr-runtime-4.5-rc-2-osgi" level="project" />
   </component>
 </module>

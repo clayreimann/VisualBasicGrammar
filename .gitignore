@@ -1,5 +1,9 @@
 # ignore the generated files
 gen/
+out/
+
+# ignore IntelliJ files
+.idea/dictionaries
 
 # Windows image file caches
 Thumbs.db

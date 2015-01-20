@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="antlr-runtime-4.5-rc-2-osgi">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/VisualBasic/antlr-runtime-4.5-rc-2-osgi.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
