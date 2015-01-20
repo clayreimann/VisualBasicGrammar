@@ -31,16 +31,20 @@ lexer grammar VB6Lexer;
 
 //
 //  Literals
-STRING_LITERAL      : '"' (ESC|.)*? '"';
+STRING_LITERAL      : '"' (~["\r\n] | '""')* '"';
 fragment ESC        : '""';
 
 fragment DIGIT      : [0-9];
+fragment HEX_DIGIT  : [0-9A-F];
 fragment EXPONENT   : [eE] (PLUS | MINUS)? DIGIT+;
 FLOAT_LITERAL       : DIGIT+ DOT DIGIT+ EXPONENT?
                     | DOT DIGIT+ EXPONENT?
                     | DIGIT+ EXPONENT
                     ;
-INTEGER_LITERAL     : DIGIT+ AMP?;
+INTEGER_LITERAL     : DIGIT+ AMP?
+                    | '['[MmDdYyHhTt \:\/\,]+ ']'
+                    | '&H' HEX_DIGIT+
+                    ;
 
 fragment DATE_F     : DIGIT+ '/' DIGIT+ '/' DIGIT;
 fragment TIME_F     : DIGIT+ ':' DIGIT+ (':' DIGIT+)? ('AM'|'PM')?;
@@ -56,11 +60,15 @@ NOTHING             : 'Nothing';
 
 
 // File headers
-OPTION_EXPLICIT     : 'Option Explicit';
+OPTION              : 'Option';
+EXPLICIT            : 'Explicit';
+STRICT              : 'Strict';
 ATTRIBUTE           : 'Attribute';
 VERSION             : 'VERSION';
 CLASS               : 'CLASS';
 BEGIN               : [Bb][Ee][Gg][Ii][Nn]; // Case insensitive
+BEGINPROPERTY       : 'BeginProperty';
+ENDPROPERTY         : 'EndProperty';
 
 // Visibility
 PUBLIC              : 'Public';
@@ -117,18 +125,28 @@ WITH                : 'With';
 
 // Misc keywords
 AS                  : 'As';
+ALIAS               : 'Alias';
+BYREF               : 'ByRef';
+BYVAL               : 'ByVal';
+CONST               : 'Const';
+DECLARE             : 'Declare';
 DIM                 : 'Dim';
 ENUM                : 'Enum';
-EVENTS              : 'WithEvents';
-TYPE                : 'Type';
+EVENT               : 'Event';
+WITHEVENTS          : 'WithEvents';
+LIB                 : 'Lib';
 ME                  : 'Me';
 NEW                 : 'New';
-CONST               : 'Const';
+OPTIONAL            : 'Optional';
+PARAMARRAY          : 'ParamArray';
+TYPE                : 'Type';
+TYPEOF              : 'TypeOf';
 
 // Operators
 AMP                 : '&';
 AND                 : 'And';
 DIV                 : '/';
+INTDIV              : '\\';
 EQ                  : '=';
 EXP                 : '^';
 GT                  : '>';
@@ -157,7 +175,7 @@ COMMA               : ',';
 DOT                 : '.';
 COLON               : ':';
 
-ID                  : [a-zA-Z][A-Za-z0-9_]*;
+ID                  : [a-zA-Z_][A-Za-z0-9_]*;
 
 // whitespace
 NL                  : '\r'?'\n';                // unforunately newlines can be syntactic in VB6 so we can't just throw them out

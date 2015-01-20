@@ -35,6 +35,7 @@
  *      - Next
  *
  *  Gotchas
+ *  None currently known
  *
  *  FYI
  *  1. VB.NET syntax: http://msdn.microsoft.com/en-us/library/aa711636(v=vs.71).aspx
@@ -49,12 +50,14 @@ import VB6Lexer;
 //
 
 colonOrNL: COLON? NL | COLON;
-identifier: ID; // this makes it easier to grab IDs later
+identifier: (ID DOT)* ID typeCharacter?; // this makes it easier to grab IDs later
+typeCharacter: '$';
+asArray: LPAREN (integerLiteral (TO integerLiteral)?)? RPAREN;
 propertyAccess: DOT identifier;
 assignTarget
     :   identifier
     |   propertyAccess
-    |   assignTarget arguments
+    |   assignTarget callArguments
     |   assignTarget propertyAccess
     ;
 
@@ -82,30 +85,31 @@ builtinType
     ;
 
 expression
-    :   unary=(PLUS|MINUS|NOT) expression
-    |   LPAREN expression RPAREN
-    |   expression aOpr=EXP expression
-    |   expression aOp=(MUL|DIV|MOD) expression
-    |   expression aOpr=(PLUS|MINUS) expression
-    |   expression aOpr=(EQ|NEQ) expression
-    |   expression aOpr=(LT|LTE) expression
-    |   expression aOpr=(GT|GTE) expression
-    |   expression LIKE expression
+    :   LPAREN expression RPAREN
+    |   expression arithmeticOp=EXP expression
+    |   expression arithmeticOp=(MUL|DIV|MOD|INTDIV) expression
+    |   expression arithmeticOp=(PLUS|MINUS) expression
     |   expression AMP expression
-    |   expression lOpr=(AND|OR) expression
-    |   expression  arguments                   #lookup
-    |   expression (DOT expression)+            #lookup
+    |   expression comparisonOp=(EQ|NEQ) expression
+    |   expression comparisonOp=(LT|LTE) expression
+    |   expression comparisonOp=(GT|GTE) expression
+    |   expression comparisonOp=(LIKE|IS) expression
+    |   expression conjunctionOp=(AND|OR) expression
+    |   unary=(PLUS|MINUS|NOT|TYPEOF) expression
+    |   expression  callArguments
+    |   expression (DOT expression)+
     |   atom
     ;
 
+callArguments:   LPAREN arguments? RPAREN;
 arguments
-    :   LPAREN (    namedArguments
-                |   positionalArguments
-                |   positionalArguments COMMA namedArguments
-                )?
-        RPAREN
+    :    namedArguments
+    |   positionalArguments
+    |   positionalArguments COMMA namedArguments
     ;
-positionalArguments:   expression (COMMA expression?)*;
+positionalArguments
+    :   expression  (COMMA expression?)*
+    |   expression? (COMMA expression?)+;
 namedArguments: tag expression (COMMA tag expression)*;
 tag: identifier PARAM_TAG;
 
@@ -116,22 +120,22 @@ atom
     |   ME
     ;
 literal
-    :   FLOAT_LITERAL
-    |   INTEGER_LITERAL
+    :   floatLiteral
+    |   integerLiteral
     |   STRING_LITERAL
     |   DATE_LITERAL
     |   NOTHING
     |   TRUE | FALSE
     ;
 floatLiteral
-    :   FLOAT_LITERAL
+    :   (PLUS|MINUS)? FLOAT_LITERAL
     ;
 integerLiteral
-    :   INTEGER_LITERAL
+    :   (PLUS|MINUS)? INTEGER_LITERAL
     ;
 
 newExpr
-    :   NEW identifier arguments?
+    :   NEW identifier callArguments?
     ;
 
 //
@@ -150,6 +154,7 @@ statement
     |   declarationStmt
     |   errorStmt
     |   exitStmt
+    |   gotoStmt
     |   invocationStmt
     |   loopStmt
     |   selectStmt
@@ -158,7 +163,9 @@ statement
 
 assignmentStmt
     :   assignTarget EQ expression
-    |   SET assignTarget EQ expression  #objectAssignStmt
+    |   SET assignTarget EQ (   expression
+                            |   NEW identifier callArguments?
+                            )
     ;
 
 conditionalStmt
@@ -180,25 +187,32 @@ elseClause: ELSE COLON? block?;
 endIfClause: END IF;
 
 declarationStmt
-    :   DIM identifier (AS type)
+    :   DIM identifier asArray? (AS type)?
+    |   CONST identifier (AS type)? (EQ literal)?
     ;
 
 errorStmt
     : ON_ERROR  (   GOTO identifier
                 |   GOTO_ZERO
-                )
+                |   RESUME_NEXT
+                ) COLON?
     ;
 
 exitStmt
-    : EXIT  (   FOR
+    : EXIT  (   DO
+            |   FOR
             |   LOOP
             |   FUNCTION
             |   SUB
             )
     ;
 
+gotoStmt
+    : GOTO identifier;
+
 invocationStmt
     :   CALL expression
+    |   expression arguments
     ;
 
 loopStmt
@@ -207,14 +221,20 @@ loopStmt
     |   whileLoop
     ;
 doWhileLoop
-    :   DO ((WHILE | UNTIL) expression)? colonOrNL
+    :   DO (WHILE | UNTIL) expression colonOrNL
         block
-        LOOP ((WHILE | UNTIL) expression)?
+        LOOP
+    |   DO colonOrNL
+        block
+        LOOP (WHILE | UNTIL) expression
     ;
 forLoop
     :   FOR expression EQ expression TO expression colonOrNL
         block
         NEXT expression?
+    |   FOR EACH identifier IN expression colonOrNL
+        block
+        NEXT identifier?
     ;
 whileLoop
     :   WHILE expression colonOrNL
@@ -246,11 +266,127 @@ withStmt
         END WITH
     ;
 
+//
+//  module level
+//
+memberDeclaration
+    :   enumDeclaration
+    |   eventDeclaration
+    |   externalDeclaration
+    |   methodDeclaration
+    |   propertyDeclaration
+    |   typeDeclaration
+    |   variableDeclaration
+    ;
+
+attributes: attribute (NL attribute)*;
+attribute: ATTRIBUTE identifier DOT identifier EQ literal;
+
+enumDeclaration
+    :   visibility? ENUM identifier NL+
+        enumField+
+        END ENUM
+    ;
+enumField:  identifier (EQ integerLiteral)? NL+;
+
+eventDeclaration
+    :   visibility EVENT identifier parameterList (NL attributes)?
+    ;
+
+externalDeclaration
+    :   visibility DECLARE SUB identifier
+            LIB STRING_LITERAL (ALIAS STRING_LITERAL)? parameterList
+    |   visibility DECLARE FUNCTION identifier
+            LIB STRING_LITERAL (ALIAS STRING_LITERAL)? parameterList (AS type)?
+    ;
+
+methodDeclaration
+    :   subDeclaration
+    |   functionDeclaration
+    ;
+subDeclaration
+    :   visibility? SUB identifier parameterList NL+
+        attributes?
+        block?
+        END SUB
+    ;
+functionDeclaration
+    :   visibility? FUNCTION identifier parameterList (AS type)? NL+
+        attributes?
+        block?
+        END FUNCTION
+    ;
+parameterList: LPAREN parameters? RPAREN;
+parameters: parameter (COMMA parameter)*;
+parameter: parameterModifier* identifier asArray? (AS type)? (EQ (literal | identifier))?;
+parameterModifier: BYVAL | BYREF | OPTIONAL | PARAMARRAY;
+
+propertyDeclaration
+    :   visibility? PROPERTY propType=( LET | GET | SET ) identifier parameterList (AS type)? NL+
+        attributes?
+        block
+        END PROPERTY
+    ;
+
+typeDeclaration
+    :   visibility? TYPE identifier NL+
+        (typeField NL)+
+        END TYPE
+    ;
+typeField: identifier AS type;
+
+variableDeclaration
+    :   visibility WITHEVENTS? identifier asArray? AS type (NL+ attributes)?
+    |   visibility? CONST identifier (AS type)? EQ literal (NL+ attributes)?
+    ;
 
 
+//
+//  file level
+//
+file
+    :   header NL*
+        (optionStatement NL+)*
+        (memberDeclaration NL+)*
+    ;
 
+header
+    :   (hdrVersionStatement NL)?
+        ((   hdrAttributeStatement
+         |   hdrPropertyBlock
+         ) NL)+
+    ;
 
+hdrAttributeStatement
+    :   ATTRIBUTE identifier EQ literal
+    |   OBJECT EQ STRING_LITERAL ';' STRING_LITERAL
+    ;
 
+hdrPropertyBlock
+    :   BEGIN (identifier identifier?)? NL
+        (   (   hdrProperty
+            |   hdrComplexProperty
+            |   hdrPropertyBlock
+            ) NL
+        )+
+        END
+    ;
+hdrProperty
+    :   identifier EQ literal(COLON literal)?
+    ;
+hdrComplexProperty
+    :   BEGINPROPERTY identifier NL
+        (hdrProperty NL)+
+        ENDPROPERTY
+    ;
 
+hdrVersionStatement
+    :   VERSION FLOAT_LITERAL CLASS?
+    ;
 
+optionStatement
+    :   OPTION  (   EXPLICIT
+                |   STRICT
+                )
+    ;
 
