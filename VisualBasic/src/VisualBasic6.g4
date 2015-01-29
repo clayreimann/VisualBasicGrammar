@@ -345,7 +345,7 @@ variableDeclaration
 //  file level
 //
 file
-    :   header NL*
+    :   header? NL*
         (optionStatement NL+)*
         (memberDeclaration NL+)*
     ;

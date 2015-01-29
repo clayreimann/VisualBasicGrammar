@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f358c7f7-c861-4111-bcbf-5c08ec4af746" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/VisualBasic.iml" afterPath="$PROJECT_DIR$/VisualBasic/VisualBasic.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/CodeComplexityListener.java" afterPath="$PROJECT_DIR$/VisualBasic/src/CodeComplexityListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java" afterPath="$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java" afterPath="$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/NestingDepthListener.java" afterPath="$PROJECT_DIR$/VisualBasic/src/NestingDepthListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4" afterPath="$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Parser.java" afterPath="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Parser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="VisualBasicGrammar.iws" />
@@ -28,14 +31,14 @@
     <favorites_list name="VisualBasicGrammar" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6374696">
+    <splitter split-orientation="horizontal" split-proportion="0.48407644">
       <split-first>
         <leaf>
-          <file leaf-file-name="CodeMetrics.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CodeMetrics.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.43589744" vertical-offset="17" max-vertical-offset="1037">
-                  <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="918">
+                  <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -43,28 +46,30 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CyclomaticComplexityListener.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="CyclomaticComplexityListener.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="685" max-vertical-offset="1785">
-                  <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+                <state vertical-scroll-proportion="0.88465846" vertical-offset="111" max-vertical-offset="1734">
+                  <caret line="81" column="42" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1505#1522#0" expanded="true" />
-                    <element signature="e#2271#2272#0" expanded="true" />
-                    <element signature="e#2321#2322#0" expanded="true" />
-                    <element signature="e#2361#2362#0" expanded="true" />
-                    <element signature="e#2398#2399#0" expanded="true" />
-                    <element signature="e#2434#2435#0" expanded="true" />
-                    <element signature="e#2467#2468#0" expanded="true" />
-                    <element signature="method#findLogicalAtoms#0;class#CyclomaticComplexityListener#0" expanded="false" />
                     <element signature="method#enterIfStatement#0;class#CyclomaticComplexityListener#0" expanded="false" />
                     <element signature="method#enterIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
                     <element signature="method#enterElseIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
-                    <element signature="method#enterCaseClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
                     <element signature="method#enterDoWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
                     <element signature="method#enterWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
-                    <element signature="method#enterErrorStmt#0;class#CyclomaticComplexityListener#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ControlFlowComplexityListener.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/VisualBasic/src/ControlFlowComplexityListener.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="1632">
+                  <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+                  <folding>
+                    <element signature="e#0#3572#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -73,14 +78,10 @@
           <file leaf-file-name="NestingDepthListener.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/VisualBasic/src/NestingDepthListener.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1292">
-                  <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="952">
+                  <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="docComment;class#NestingDepthListener#0" expanded="false" />
-                    <element signature="e#1461#1478#0" expanded="true" />
-                    <element signature="e#2291#2292#0" expanded="true" />
-                    <element signature="e#2336#2337#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -93,19 +94,178 @@
           <file leaf-file-name="VB6Lexer.g4" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="2303" max-vertical-offset="3213">
+                <state vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3213">
                   <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="VisualBasic6.g4" pinned="false" current-in-tab="true">
+          <file leaf-file-name="VisualBasic6.g4" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8136752" vertical-offset="153" max-vertical-offset="6766">
-                  <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="5614" max-vertical-offset="6766">
+                  <caret line="346" column="4" selection-start-line="346" selection-start-column="4" selection-end-line="346" selection-end-column="4" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ComplexityListenerAggregator.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/VisualBasic/src/ComplexityListenerAggregator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.1343785" vertical-offset="203" max-vertical-offset="8517">
+                  <caret line="59" column="58" selection-start-line="59" selection-start-column="58" selection-end-line="59" selection-end-column="58" />
+                  <folding>
+                    <element signature="docComment;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitColonOrNL#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterIdentifier#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitIdentifier#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterTypeCharacter#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitTypeCharacter#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterAsArray#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitAsArray#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterPropertyAccess#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitPropertyAccess#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterAssignTarget#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitAssignTarget#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterVisibility#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitVisibility#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterType#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitType#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterBuiltinType#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitBuiltinType#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterExpression#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitExpression#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterCallArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitCallArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterPositionalArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitPositionalArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterNamedArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitNamedArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterTag#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitTag#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterAtom#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitAtom#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterFloatLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitFloatLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterIntegerLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitIntegerLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterNewExpr#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitNewExpr#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterLine#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitLine#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterLabel#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitLabel#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterStatements#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitStatements#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterAssignmentStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitAssignmentStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterConditionalStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitConditionalStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterIfStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitIfStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterIfBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitIfBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterElseIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitElseIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterElseClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitElseClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterEndIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitEndIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterDeclarationStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitDeclarationStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterErrorStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitErrorStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterExitStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitExitStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterGotoStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitGotoStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterInvocationStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitInvocationStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterLoopStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitLoopStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterDoWhileLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitDoWhileLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterForLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitForLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterWhileLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitWhileLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterSelectStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitSelectStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterCaseStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitCaseStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterCaseClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitCaseClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterCaseElseStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitCaseElseStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterWithStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitWithStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterMemberDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitMemberDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterAttributes#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitAttributes#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterAttribute#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitAttribute#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterEnumDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitEnumDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterEnumField#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitEnumField#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterEventDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitEventDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterExternalDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitExternalDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterMethodDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitMethodDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterSubDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitSubDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterFunctionDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitFunctionDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterParameterList#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitParameterList#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterParameters#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitParameters#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterParameter#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitParameter#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterParameterModifier#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitParameterModifier#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterPropertyDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitPropertyDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterTypeDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitTypeDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterTypeField#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitTypeField#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterVariableDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitVariableDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterFile#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitFile#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterHeader#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitHeader#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterHdrAttributeStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitHdrAttributeStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterHdrPropertyBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitHdrPropertyBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterHdrProperty#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitHdrProperty#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterHdrComplexProperty#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitHdrComplexProperty#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterHdrVersionStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitHdrVersionStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterOptionStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitOptionStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#enterEveryRule#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                    <element signature="method#exitEveryRule#0;class#ComplexityListenerAggregator#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -126,10 +286,12 @@
         <option value="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Listener.java" />
         <option value="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Parser.java" />
         <option value="$PROJECT_DIR$/VisualBasic/src/CodeComplexityListener.java" />
-        <option value="$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java" />
+        <option value="$PROJECT_DIR$/VisualBasic/src/ControlFlowComplexityListener.java" />
         <option value="$PROJECT_DIR$/VisualBasic/src/NestingDepthListener.java" />
-        <option value="$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4" />
+        <option value="$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java" />
         <option value="$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java" />
+        <option value="$PROJECT_DIR$/VisualBasic/src/ComplexityListenerAggregator.java" />
+        <option value="$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4" />
       </list>
     </option>
   </component>
@@ -315,7 +477,7 @@
     <property name="$PROJECT_DIR$/VisualBasic/src/VisualBasic.g4::/language" value="CSharp" />
     <property name="$PROJECT_DIR$/VisualBasic/src/VisualBasic.g4::/gen-listener" value="true" />
     <property name="$PROJECT_DIR$/VisualBasic/src/VisualBasic.g4::/gen-visitor" value="true" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="fileTemplates" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4::/auto-gen" value="true" />
@@ -328,6 +490,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4::/language" value="CSharp" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -339,6 +502,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="CodeMetrics" />
       <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;C:\EpicSource\8.2\App QA\ApplCore-UI Tools\HTML\Skin\ACSkinTools.cls&quot;" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -560,19 +724,18 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40042827" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32976446" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40848807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15724947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15778251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -580,8 +743,9 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993576" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -614,39 +778,162 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/VisualBasic/VisualBasic.iml">
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="591">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VisualBasic/gen/VisualBasic6Visitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0044792835" vertical-offset="4" max-vertical-offset="7752">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="363" max-vertical-offset="1292">
+          <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6BaseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.832776" vertical-offset="3060" max-vertical-offset="15606">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VisualBasic/src/CodeComplexityListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17056856" vertical-offset="0" max-vertical-offset="799">
-          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1173">
+          <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
           <folding>
-            <element signature="e#2404#2405#0" expanded="true" />
-            <element signature="e#2433#2434#0" expanded="true" />
+            <element signature="e#2234#2235#0" expanded="true" />
+            <element signature="e#2295#2296#0" expanded="true" />
+            <element signature="method#enterFunctionDeclaration#0;class#CodeComplexityListener#0" expanded="false" />
+            <element signature="method#enterSubDeclaration#0;class#CodeComplexityListener#0" expanded="false" />
+            <element signature="method#enterPropertyDeclaration#0;class#CodeComplexityListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="562" max-vertical-offset="1564">
+          <caret line="84" column="11" selection-start-line="77" selection-start-column="28" selection-end-line="84" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#enterIfStatement#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterElseIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterDoWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/ControlFlowComplexityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="1632">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#3572#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/NestingDepthListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="952">
+          <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3213">
+          <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="1292">
+          <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/CodeComplexityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1173">
+          <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+          <folding>
+            <element signature="e#2234#2235#0" expanded="true" />
+            <element signature="e#2295#2296#0" expanded="true" />
+            <element signature="method#enterFunctionDeclaration#0;class#CodeComplexityListener#0" expanded="false" />
+            <element signature="method#enterSubDeclaration#0;class#CodeComplexityListener#0" expanded="false" />
+            <element signature="method#enterPropertyDeclaration#0;class#CodeComplexityListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="562" max-vertical-offset="1564">
+          <caret line="84" column="11" selection-start-line="77" selection-start-column="28" selection-end-line="84" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#enterIfStatement#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterElseIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterDoWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/ControlFlowComplexityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="1632">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#3572#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/NestingDepthListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="952">
+          <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3213">
+          <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="1122">
+          <caret line="78" column="29" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -657,36 +944,52 @@
           <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1505#1522#0" expanded="true" />
-            <element signature="e#2271#2272#0" expanded="true" />
-            <element signature="e#2321#2322#0" expanded="true" />
-            <element signature="e#2361#2362#0" expanded="true" />
-            <element signature="e#2398#2399#0" expanded="true" />
-            <element signature="e#2434#2435#0" expanded="true" />
-            <element signature="e#2467#2468#0" expanded="true" />
-            <element signature="method#findLogicalAtoms#0;class#CyclomaticComplexityListener#0" expanded="false" />
             <element signature="method#enterIfStatement#0;class#CyclomaticComplexityListener#0" expanded="false" />
             <element signature="method#enterIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
             <element signature="method#enterElseIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
-            <element signature="method#enterCaseClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
             <element signature="method#enterDoWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
             <element signature="method#enterWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
-            <element signature="method#enterErrorStmt#0;class#CyclomaticComplexityListener#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VisualBasic/src/NestingDepthListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1292">
-          <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1292">
+          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#NestingDepthListener#0" expanded="false" />
-            <element signature="e#1461#1478#0" expanded="true" />
-            <element signature="e#2291#2292#0" expanded="true" />
-            <element signature="e#2336#2337#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3213">
+          <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/VisualBasic.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="591">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/gen/VisualBasic6Visitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0044792835" vertical-offset="4" max-vertical-offset="7752">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -698,20 +1001,252 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/ControlFlowComplexityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="1632">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#3572#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Listener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22742476" vertical-offset="0" max-vertical-offset="12665">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6BaseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="15606">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/VisualBasic/antlr-runtime-4.5-rc-2-osgi.jar!/org/antlr/v4/runtime/ANTLRInputStream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.019790454" vertical-offset="255" max-vertical-offset="2754">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+          <folding>
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8136752" vertical-offset="153" max-vertical-offset="6766">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5614" max-vertical-offset="6766">
+          <caret line="346" column="4" selection-start-line="346" selection-start-column="4" selection-end-line="346" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/ComplexityListenerAggregator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1343785" vertical-offset="203" max-vertical-offset="8517">
+          <caret line="59" column="58" selection-start-line="59" selection-start-column="58" selection-end-line="59" selection-end-column="58" />
+          <folding>
+            <element signature="docComment;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitColonOrNL#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterIdentifier#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitIdentifier#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterTypeCharacter#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitTypeCharacter#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterAsArray#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitAsArray#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterPropertyAccess#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitPropertyAccess#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterAssignTarget#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitAssignTarget#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterVisibility#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitVisibility#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterType#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitType#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterBuiltinType#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitBuiltinType#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterExpression#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitExpression#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterCallArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitCallArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterPositionalArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitPositionalArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterNamedArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitNamedArguments#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterTag#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitTag#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterAtom#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitAtom#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterFloatLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitFloatLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterIntegerLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitIntegerLiteral#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterNewExpr#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitNewExpr#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterLine#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitLine#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterLabel#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitLabel#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterStatements#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitStatements#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterAssignmentStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitAssignmentStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterConditionalStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitConditionalStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterIfStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitIfStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterIfBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitIfBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterElseIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitElseIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterElseClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitElseClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterEndIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitEndIfClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterDeclarationStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitDeclarationStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterErrorStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitErrorStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterExitStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitExitStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterGotoStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitGotoStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterInvocationStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitInvocationStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterLoopStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitLoopStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterDoWhileLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitDoWhileLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterForLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitForLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterWhileLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitWhileLoop#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterSelectStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitSelectStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterCaseStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitCaseStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterCaseClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitCaseClause#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterCaseElseStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitCaseElseStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterWithStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitWithStmt#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterMemberDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitMemberDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterAttributes#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitAttributes#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterAttribute#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitAttribute#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterEnumDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitEnumDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterEnumField#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitEnumField#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterEventDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitEventDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterExternalDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitExternalDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterMethodDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitMethodDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterSubDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitSubDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterFunctionDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitFunctionDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterParameterList#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitParameterList#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterParameters#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitParameters#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterParameter#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitParameter#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterParameterModifier#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitParameterModifier#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterPropertyDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitPropertyDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterTypeDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitTypeDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterTypeField#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitTypeField#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterVariableDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitVariableDeclaration#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterFile#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitFile#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterHeader#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitHeader#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterHdrAttributeStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitHdrAttributeStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterHdrPropertyBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitHdrPropertyBlock#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterHdrProperty#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitHdrProperty#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterHdrComplexProperty#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitHdrComplexProperty#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterHdrVersionStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitHdrVersionStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterOptionStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitOptionStatement#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#enterEveryRule#0;class#ComplexityListenerAggregator#0" expanded="false" />
+            <element signature="method#exitEveryRule#0;class#ComplexityListenerAggregator#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/NestingDepthListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="952">
+          <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/CodeComplexityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4725644" vertical-offset="54" max-vertical-offset="1173">
+          <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+          <folding>
+            <element signature="e#2234#2235#0" expanded="true" />
+            <element signature="e#2295#2296#0" expanded="true" />
+            <element signature="method#enterFunctionDeclaration#0;class#CodeComplexityListener#0" expanded="false" />
+            <element signature="method#enterSubDeclaration#0;class#CodeComplexityListener#0" expanded="false" />
+            <element signature="method#enterPropertyDeclaration#0;class#CodeComplexityListener#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43589744" vertical-offset="17" max-vertical-offset="1037">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="918">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88465846" vertical-offset="111" max-vertical-offset="1734">
+          <caret line="81" column="42" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#enterIfStatement#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterElseIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterDoWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
+            <element signature="method#enterWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
           </folding>
         </state>
       </provider>

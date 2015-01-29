@@ -22,64 +22,42 @@
  * THE SOFTWARE.
  */
 
-import VB6.VisualBasic6BaseListener;
 import VB6.VisualBasic6Parser;
 import org.antlr.v4.runtime.misc.NotNull;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by creimann on 1/19/2015.
+ * Created by Clay Reimann on 1/19/2015.
  */
 public class NestingDepthListener extends CodeComplexityListener {
-    HashMap<String, Integer> nestingLevel = new HashMap<String, Integer>();
-    String _currentFunction = null;
-    int _currentLevel = 0;
-    int _maxLevel = 0;
+    String m_CurrentFunction = null;
+    int m_CurrentLevel = 0;
+    int m_MaxLevel = 0;
 
-    public void printNestingsWithThreshold(int threshold) {
-        int longestKeyLength = 0;
-        String formatString;
-
-        for(String key : nestingLevel.keySet()) {
-            if (key.length() > longestKeyLength) {
-                longestKeyLength = key.length();
-            }
-        }
-        formatString = "%-" + longestKeyLength + "s %d";
-
-        System.out.println("Nestings:");
-        System.out.println("---------");
-        for(Map.Entry<String, Integer> entry : nestingLevel.entrySet()) {
-            if (entry.getValue() > threshold) {
-                System.out.println(String.format(formatString, entry.getKey(), entry.getValue()));
-            }
-        }
-    }
-
-    public void printNestings() {
-        printNestingsWithThreshold(3);
+    public NestingDepthListener() {
+        m_DefaultThreshold = 4;
+        m_MetricName = "Nesting Level";
     }
 
     @Override
     protected void beginFunction(String functionName) {
-        _currentFunction = functionName;
-        _currentLevel = _maxLevel = 1;
+        m_CurrentFunction = functionName;
+        m_CurrentLevel = m_MaxLevel = 1;
     }
 
     @Override
     protected void endFunction() {
-        nestingLevel.put(_currentFunction, _maxLevel);
+        m_CodeMetrics.put(m_CurrentFunction, m_MaxLevel);
 
-        _currentFunction = null;
+        m_CurrentFunction = null;
     }
 
     @Override
     public void enterBlock(@NotNull VisualBasic6Parser.BlockContext ctx) {
-        _currentLevel += 1;
-        if (_currentLevel > _maxLevel) {
-            _maxLevel = _currentLevel;
+        m_CurrentLevel += 1;
+        if (m_CurrentLevel > m_MaxLevel) {
+            m_MaxLevel = m_CurrentLevel;
         }
 
         super.enterBlock(ctx);
@@ -87,7 +65,7 @@ public class NestingDepthListener extends CodeComplexityListener {
 
     @Override
     public void exitBlock(@NotNull VisualBasic6Parser.BlockContext ctx) {
-        _currentLevel -= 1;
+        m_CurrentLevel -= 1;
 
         super.exitBlock(ctx);
     }

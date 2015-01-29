@@ -29,36 +29,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by creimann on 1/19/2015.
+ * Created by Clay Reimann on 1/19/2015.
  */
 public class CyclomaticComplexityListener extends CodeComplexityListener {
     String m_CurrentFunction;
     int m_ExitPoints, m_DecisionPoints;
-    HashMap<String, Integer> complexityCount = new HashMap<String, Integer>();
 
-    public void printComplexitiesWithThreshold(int threshold) {
-        int longestKeyLength = 0;
-        String formatString;
-
-        for(String key : complexityCount.keySet()) {
-            if (key.length() > longestKeyLength) {
-                longestKeyLength = key.length();
-            }
-        }
-        formatString = "%-" + longestKeyLength + "s %d";
-
-        System.out.println("Complexities:");
-        System.out.println("-------------");
-        for (Map.Entry<String, Integer> entry: complexityCount.entrySet()) {
-            if (entry.getValue() > threshold) {
-                System.out.println(String.format(formatString, entry.getKey(), entry.getValue()));
-            }
-        }
+    public CyclomaticComplexityListener() {
+        m_DefaultThreshold = 10;
+        m_MetricName = "Cyclomatic Complexity";
     }
 
-    public void printComplexities() {
-        printComplexitiesWithThreshold(10);
-    }
     private void foundDecisionPoint() {
         m_DecisionPoints += 1;
     }
@@ -79,7 +60,7 @@ public class CyclomaticComplexityListener extends CodeComplexityListener {
 
         // from http://en.wikipedia.org/wiki/Cyclomatic_complexity
         int complexity = m_DecisionPoints - m_ExitPoints + 2;
-        complexityCount.put(m_CurrentFunction, complexity);
+        m_CodeMetrics.put(m_CurrentFunction, complexity);
 
         m_CurrentFunction = null;
     }
@@ -94,14 +75,14 @@ public class CyclomaticComplexityListener extends CodeComplexityListener {
     //
     private void findLogicalAtoms(VisualBasic6Parser.ExpressionContext ctx) {
         // conjunction operators indicate another decision point
-        if (ctx.conjunctionOp != null) {
-            foundDecisionPoint();
-
-            // recurse through any nested expressions
-            for (VisualBasic6Parser.ExpressionContext c : ctx.expression()) {
-                findLogicalAtoms(c);
-            }
-        }
+//        if (ctx.conjunctionOp != null) {
+//            foundDecisionPoint();
+//
+//            // recurse through any nested expressions
+//            for (VisualBasic6Parser.ExpressionContext c : ctx.expression()) {
+//                findLogicalAtoms(c);
+//            }
+//        }
     }
 
     @Override

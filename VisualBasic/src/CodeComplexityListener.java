@@ -23,15 +23,49 @@
  */
 
 import VB6.VisualBasic6Parser;
+import com.sun.deploy.util.StringUtils;
 import org.antlr.v4.runtime.misc.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by creimann on 1/20/2015.
  */
 public abstract class CodeComplexityListener extends VB6.VisualBasic6BaseListener {
-    protected abstract void beginFunction(String functionName);
+    protected Integer m_DefaultThreshold = 1;
+    protected String m_MetricName;
+    protected HashMap<String, Integer> m_CodeMetrics = new HashMap<String, Integer>();
 
+    protected abstract void beginFunction(String functionName);
     protected abstract void endFunction();
+
+
+    public void printResultsWithThreshold(Integer threshold) {
+        String formatString = getFormatString();
+
+        System.out.println(m_MetricName);
+        System.out.println(new String(new char[m_MetricName.length()]).replace("\0", "-"));
+        for (Map.Entry<String, Integer> entry: m_CodeMetrics.entrySet()) {
+            if (entry.getValue() > threshold) {
+                System.out.println(String.format(formatString, entry.getKey(), entry.getValue()));
+            }
+        }
+    }
+    public void printResults() {
+        printResultsWithThreshold(m_DefaultThreshold);
+    }
+
+    protected String getFormatString() {
+        int longestKeyLength = 0;
+
+        for(String key : m_CodeMetrics.keySet()) {
+            if (key.length() > longestKeyLength) {
+                longestKeyLength = key.length();
+            }
+        }
+        return "%-" + longestKeyLength + "s %d";
+    }
 
     @Override
     public void enterFunctionDeclaration(@NotNull VisualBasic6Parser.FunctionDeclarationContext ctx) {

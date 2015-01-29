@@ -49,33 +49,26 @@ public class CodeMetrics {
             filePath = console.readLine();
         }
 
-        BufferedReader fs = new BufferedReader(new FileReader(filePath));
-        System.out.println("Parsing file: " + filePath);
-
-        // create a CharStream that reads from standard input
-        ANTLRInputStream input = new ANTLRInputStream(fs);
-
-        // create a lexer that feeds off of input CharStream
-        VisualBasic6Lexer lexer = new VisualBasic6Lexer(input);
-
-        // create a buffer of tokens pulled from the lexer
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-
-        // parse the file
-        VisualBasic6Parser parser = new VisualBasic6Parser(tokens);
-        ParseTree tree = parser.file();
-        ParseTreeWalker walker = new ParseTreeWalker();
+        ComplexityListenerAggregator aggregator = new ComplexityListenerAggregator();
 
         CyclomaticComplexityListener complexity = new CyclomaticComplexityListener();
-        walker.walk(complexity, tree);
-        complexity.printComplexities();
-
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        aggregator.addListener(complexity);
 
         NestingDepthListener nesting = new NestingDepthListener();
-        walker.walk(nesting, tree);
-        nesting.printNestings();
+        aggregator.addListener(nesting);
+
+        ControlFlowComplexityListener flowComplexity = new ControlFlowComplexityListener();
+        aggregator.addListener(flowComplexity);
+
+        aggregator.analyzeFile(filePath);
+
+        nesting.printResults();
+        System.out.println();
+
+        complexity.printResults();
+        System.out.println();
+
+        flowComplexity.printResults();
+        System.out.println();
     }
 }
