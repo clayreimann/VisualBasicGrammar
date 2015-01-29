@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f358c7f7-c861-4111-bcbf-5c08ec4af746" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/CodeComplexityListener.java" afterPath="$PROJECT_DIR$/VisualBasic/src/CodeComplexityListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java" afterPath="$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java" afterPath="$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/NestingDepthListener.java" afterPath="$PROJECT_DIR$/VisualBasic/src/NestingDepthListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4" afterPath="$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4" afterPath="$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Parser.java" afterPath="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Parser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6.tokens" afterPath="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6.tokens" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Lexer.tokens" afterPath="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Lexer.tokens" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="VisualBasicGrammar.iws" />
@@ -46,10 +44,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CyclomaticComplexityListener.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CyclomaticComplexityListener.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.88465846" vertical-offset="111" max-vertical-offset="1734">
+                <state vertical-scroll-proportion="0.0" vertical-offset="111" max-vertical-offset="1734">
                   <caret line="81" column="42" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -63,13 +61,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ControlFlowComplexityListener.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ControlFlowComplexityListener.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/VisualBasic/src/ControlFlowComplexityListener.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="1632">
-                  <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+                <state vertical-scroll-proportion="0.26651737" vertical-offset="0" max-vertical-offset="1360">
+                  <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
                   <folding>
-                    <element signature="e#0#3572#0" expanded="false" />
+                    <element signature="imports" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -94,27 +92,27 @@
           <file leaf-file-name="VB6Lexer.g4" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3213">
-                  <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="2710" max-vertical-offset="3230">
+                  <caret line="143" column="35" selection-start-line="143" selection-start-column="35" selection-end-line="143" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="VisualBasic6.g4" pinned="false" current-in-tab="false">
+          <file leaf-file-name="VisualBasic6.g4" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="5614" max-vertical-offset="6766">
-                  <caret line="346" column="4" selection-start-line="346" selection-start-column="4" selection-end-line="346" selection-end-column="4" />
+                <state vertical-scroll-proportion="0.13657407" vertical-offset="732" max-vertical-offset="6868">
+                  <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ComplexityListenerAggregator.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ComplexityListenerAggregator.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/VisualBasic/src/ComplexityListenerAggregator.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.1343785" vertical-offset="203" max-vertical-offset="8517">
+                <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="8517">
                   <caret line="59" column="58" selection-start-line="59" selection-start-column="58" selection-end-line="59" selection-end-column="58" />
                   <folding>
                     <element signature="docComment;class#ComplexityListenerAggregator#0" expanded="false" />
@@ -281,7 +279,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/VisualBasic/src/VisualBasic.g4" />
-        <option value="$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4" />
         <option value="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6BaseListener.java" />
         <option value="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Listener.java" />
         <option value="$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Parser.java" />
@@ -291,6 +288,7 @@
         <option value="$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java" />
         <option value="$PROJECT_DIR$/VisualBasic/src/CodeMetrics.java" />
         <option value="$PROJECT_DIR$/VisualBasic/src/ComplexityListenerAggregator.java" />
+        <option value="$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4" />
         <option value="$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4" />
       </list>
     </option>
@@ -472,7 +470,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/VisualBasic/antlr-runtime-4.5-rc-2-osgi.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/CodeHelp/Plugins/CHFullScreen/FullScreen.cls" />
     <property name="$PROJECT_DIR$/VisualBasic/src/VisualBasic.g4::/auto-gen" value="true" />
     <property name="$PROJECT_DIR$/VisualBasic/src/VisualBasic.g4::/language" value="CSharp" />
     <property name="$PROJECT_DIR$/VisualBasic/src/VisualBasic.g4::/gen-listener" value="true" />
@@ -717,20 +715,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1065" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1065" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993576" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993576" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40848807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -822,7 +820,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="1632">
           <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
           <folding>
-            <element signature="e#0#3572#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -897,7 +895,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="1632">
           <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
           <folding>
-            <element signature="e#0#3572#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -993,24 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2303" max-vertical-offset="3213">
-          <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VisualBasic/src/ControlFlowComplexityListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="1632">
-          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#3572#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6/VisualBasic6Listener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22742476" vertical-offset="0" max-vertical-offset="12665">
@@ -1037,17 +1017,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5614" max-vertical-offset="6766">
-          <caret line="346" column="4" selection-start-line="346" selection-start-column="4" selection-end-line="346" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VisualBasic/src/ComplexityListenerAggregator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1343785" vertical-offset="203" max-vertical-offset="8517">
+        <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="8517">
           <caret line="59" column="58" selection-start-line="59" selection-start-column="58" selection-end-line="59" selection-end-column="58" />
           <folding>
             <element signature="docComment;class#ComplexityListenerAggregator#0" expanded="false" />
@@ -1236,9 +1208,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VB6Lexer.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1351" max-vertical-offset="3230">
+          <caret line="143" column="35" selection-start-line="143" selection-start-column="35" selection-end-line="143" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/VisualBasic6.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13657407" vertical-offset="732" max-vertical-offset="6868">
+          <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/VisualBasic/src/CyclomaticComplexityListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88465846" vertical-offset="111" max-vertical-offset="1734">
+        <state vertical-scroll-proportion="0.0" vertical-offset="111" max-vertical-offset="1734">
           <caret line="81" column="42" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1247,6 +1235,16 @@
             <element signature="method#enterElseIfClause#0;class#CyclomaticComplexityListener#0" expanded="false" />
             <element signature="method#enterDoWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
             <element signature="method#enterWhileLoop#0;class#CyclomaticComplexityListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VisualBasic/src/ControlFlowComplexityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26651737" vertical-offset="0" max-vertical-offset="1360">
+          <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

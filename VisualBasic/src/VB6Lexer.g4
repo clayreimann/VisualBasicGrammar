@@ -141,6 +141,7 @@ OPTIONAL            : 'Optional';
 PARAMARRAY          : 'ParamArray';
 TYPE                : 'Type';
 TYPEOF              : 'TypeOf';
+IMPLEMENTS          : 'Implements';
 
 // Operators
 AMP                 : '&';

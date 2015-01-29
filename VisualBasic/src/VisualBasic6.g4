@@ -33,6 +33,7 @@
  *      - End If
  *      - Loop
  *      - Next
+ *  2. Only the `Call` syntax of invoking methods is supported
  *
  *  Gotchas
  *  None currently known
@@ -50,7 +51,9 @@ import VB6Lexer;
 //
 
 colonOrNL: COLON? NL | COLON;
-identifier: (ID DOT)* ID typeCharacter?; // this makes it easier to grab IDs later
+identifier
+    : ID (DOT (ID | GET | LET | SET | TYPE))* typeCharacter?    // added some keywords that might be likely to be properties
+    ;                                                           // this makes it easier to grab IDs later
 typeCharacter: '$';
 asArray: LPAREN (integerLiteral (TO integerLiteral)?)? RPAREN;
 propertyAccess: DOT identifier;
@@ -273,6 +276,7 @@ memberDeclaration
     :   enumDeclaration
     |   eventDeclaration
     |   externalDeclaration
+    |   implementsDeclaration
     |   methodDeclaration
     |   propertyDeclaration
     |   typeDeclaration
@@ -299,6 +303,8 @@ externalDeclaration
     |   visibility DECLARE FUNCTION identifier
             LIB STRING_LITERAL (ALIAS STRING_LITERAL)? parameterList (AS type)?
     ;
+
+implementsDeclaration:   IMPLEMENTS identifier;
 
 methodDeclaration
     :   subDeclaration
